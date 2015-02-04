@@ -1,0 +1,29 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+markdown: redcarpet
+
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: 
+
+title: André Eife
+description: Blog for I(dea) O(utput).
+author:
+  name: André Eife
+  email: andre.eife@gmail.com
+  github: aeife
+  twitter: a_eife
+  linkedin: "andr%C3%A9-eife/83/aa/10b"
+  bio: Blog for I(dea) O(utput).
+  email_md5: 999c6c5a88753b70648b50ff0dbb5611
+rss_path: "./feed.xml"
+
+BASE_PATH: "/blog"
