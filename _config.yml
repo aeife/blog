@@ -27,3 +27,4 @@ author:
 rss_path: "./feed.xml"
 
 baseurl: ""
+disqus_shortname: "andre-eife-blog"
