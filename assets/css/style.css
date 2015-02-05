@@ -1,11 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400italic,400,700);
 
 html {
 	overflow-y: scroll;
 }
 
 body{
-	color: #2c3e50;
+	color: #515151;
 }
 
 .sidebar {
@@ -109,6 +110,19 @@ article{
 
 article {
 	padding: 0 5% 0;
+	font-size: 18px;
+	font-family: 'Merriweather', serif;
+	letter-spacing: 0.01rem;
+}
+
+@media(max-width:767px){
+	article {
+		padding: 0;
+	}
+}
+
+pre {
+	font-size: 16px;
 }
 
 article.home div a, article.home pre a { color: #2c3e50; }
