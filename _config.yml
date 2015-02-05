@@ -26,4 +26,4 @@ author:
   email_md5: 999c6c5a88753b70648b50ff0dbb5611
 rss_path: "./feed.xml"
 
-baseurl: "/blog"
+baseurl: ""
