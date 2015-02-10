@@ -164,6 +164,10 @@ article.home h4 a:hover {
 	text-decoration: none;
 }
 
+article.home .footnotes {
+	display: none;
+}
+
 .author .author-image {
   float: left;
   margin-right: 20px;
