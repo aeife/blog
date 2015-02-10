@@ -58,7 +58,7 @@ To ensure that this code is actually called we load the dummy module and next we
 Because we saved the provider into an own variable we can use it in our test and check if the spy has been called. This workflow allows us to have a reference to the complete provider used in the `config` block and to define every spy or property on it that we want. Using this you should be able to test every code in your `config` block.
 
 ## Testing the run block
-Testing `run` blocks of your application can be similarily confusing but requires a completely different approach.
+Testing `run` blocks of your application can be similarly confusing but requires a completely different approach.
 
 In comparison to the workflow described for the `config` block you won't need any dummy modules. The difficulty here is that modules in tests need to be loaded before you call the `inject` function. To test if a function has been called in the `run` block you would need to spy on the service before it is loaded but the usual way of spying on services is to inject them. So as you can see it sounds like a chicken and egg problem.
 
