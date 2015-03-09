@@ -1,2 +1,2 @@
 # Blog
-## http://blog.andre-eife.de/
+## http://blog.andre-eife.com
