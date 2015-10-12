@@ -5,7 +5,6 @@ comments: true
 ---
 
 ## How data providers can help you write better organized and well structured tests for your AngularJS application
-
 Writing unit tests for AngularJS applications is pretty easy with the help of jasmine[^jasmine] and karma[^karma]. But thinking of every possible use case and combination of parameters can be tedious work which often leads to a lot of similar tests or lower test coverage (or maybe even both). This is where data providers come into play. They will not only help you write less code but also test more by having a wider variety of use cases covered. In this article I will show you how data providers can help you write better tests and why you should definitely use them.
 
 Before I introduce you to data providers in jasmine I want to show you an example test without them. Lets imagine we have a simple pokedex service storing a list of Pokémon. We want to test a function that adds new Pokémon to the list. There are several use cases we need to cover here and the resulting tests could look something like this:
