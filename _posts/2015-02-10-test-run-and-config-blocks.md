@@ -55,6 +55,19 @@ We defined a complete new angular module in our `beforeEach` function. This modu
 
 To ensure that this code is actually called we load the dummy module and next we load our actual module `example`. Because our module to test is loaded after our dummy module the spy was already created. When we now load in our actual module the `config` function of this module will be executed and injects the provider which includes the spy we defined.  Notice that we still need to call `inject` to actually load and run the modules correctly.
 
+There also is another way to get references to providers by using the `module` function. This solution differs from the way you would use a provider in your actual application but is a bit shorter and preferred by a lot of developers.
+
+```js
+beforeEach(function () {
+    module(function(_$locationProvider_) {
+        $locationProvider = _$locationProvider_;
+        spyOn($locationProvider, 'html5Mode');
+    });
+    module('example');
+    inject();
+});
+```
+
 Because we saved the provider into an own variable we can use it in our test and check if the spy has been called. This workflow allows us to have a reference to the complete provider used in the `config` block and to define every spy or property on it that we want. Using this you should be able to test every code in your `config` block.
 
 ## Testing the run block
@@ -93,7 +106,7 @@ In the test itself we can use this variable to check the spy we defined. Using t
 ## Conclusion
 Testing `config` and `run` blocks in AngularJS actually is not that hard once you figured out the ways to do so.  Using the workflows described you should be able to test every content of your applications initiation logic leaving no excuses to skip them when writing testing.
 
-You can view the full source code used in this article as a working example [here](http://jsbin.com/qipasu/2/edit?js,output) [^ jsbin example].
+You can view the full source code used in this article as a working example [here](http://jsbin.com/mejulakinu/edit?js,output) [^ jsbin example].
 
 [^ karma]: [karma test runner](http://karma-runner.github.io/)
 
@@ -103,4 +116,4 @@ You can view the full source code used in this article as a working example [her
 
 [^ angularjs locationprovider documentation]: [$locationProvider documentation](https://docs.angularjs.org/api/ng/provider/$locationProvider)
 
-[^ jsbin example]: [jsbin example](http://jsbin.com/qipasu/2/edit?js,output)
+[^ jsbin example]: [jsbin example](http://jsbin.com/mejulakinu/edit?js,output)
