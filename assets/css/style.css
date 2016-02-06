@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
 html {
 	overflow-y: scroll;
@@ -7,13 +6,23 @@ html {
 
 body{
 	color: #515151;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+
+h1, h2, h3 {
+    margin-top: 10px;
 }
 
 .sidebar {
 	position: fixed;
 	top: 0px;
 	padding-top: 10%;
-	background-color: #18573F;
+	background-color: rgba(0, 146, 215, 0.8);
 	color: #fff;
 }
 
@@ -42,8 +51,7 @@ a.nav-link i{
 a.nav-link:hover { color: #777 }
 
 #bio {
-	font-family: "Courier New", Courier, monospace;
-	font-size: 11px;
+	font-size: 14px;
 	margin: 0 auto;
 	margin-bottom: 10px;
 }
@@ -111,7 +119,6 @@ article{
 article {
 	padding: 0 5% 0;
 	font-size: 18px;
-	font-family: 'Merriweather', serif;
 	letter-spacing: 0.01rem;
 }
 
@@ -135,9 +142,7 @@ article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decora
 article img { max-width: 100%; }
 
 h1,h2,h3,h4,h5,h6 {
-	font-family: 'Ubuntu',
-	sans-serif;
-	color: #9D9D9D;
+	color: #919191;
 }
 
 article.home h1,
@@ -146,15 +151,14 @@ article.home h3,
 article.home h4,
 article.home h5,
 article.home h6 {
-	font-family: 'Ubuntu', sans-serif;
-	color: #9D9D9D;
+	color: #919191;
 }
 
 article.home h1 a,
 article.home h2 a,
 article.home h3 a,
 article.home h4 a {
-	color: #9D9D9D;
+	color: #919191;
 }
 article.home h1 a:hover,
 article.home h2 a:hover,
@@ -175,7 +179,6 @@ article.home .footnotes {
 
 footer {
 	padding-top: 15px;
-	font-family: 'Ubuntu';
 }
 
 /* nav-vertical-tabs component */
@@ -220,4 +223,20 @@ ul.dropdown-menu>li>a>i.fa {
 
 p {
 	line-height: 1.7em;
+}
+
+.navbar-default {
+    background-color: rgba(0, 146, 215, 0.8);
+}
+.navbar-default a, .navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default a:hover, .navbar-default .navbar-brand:hover {
+    color: #efefef;
+    background-color: transparent !important;
+}
+
+.navbar-toggle {
+    margin-top: 14px;
 }
