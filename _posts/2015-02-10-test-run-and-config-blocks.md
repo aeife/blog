@@ -5,12 +5,12 @@ comments: true
 ---
 
 ## How to easily test an often neglected part of your application
-Unit tests are an important part of every AngularJS application. Using karma[^ karma] and jasmine[^jasmine] you have all the tools needed for reaching a good test coverage of your source code. But often even projects with a lot of unit tests omit any tests concerning those `run` and `config` blocks of angular modules[^ angularjs modules documentation] although these are crucial parts of an application.
+Unit tests are an important part of every AngularJS application. Using karma[^karma] and jasmine[^jasmine] you have all the tools needed for reaching a good test coverage of your source code. But often even projects with a lot of unit tests omit any tests concerning those `run` and `config` blocks of angular modules[^angularjs modules documentation] although these are crucial parts of an application.
 
 Many developers don't test these parts of an application because they just don't know how or don't want to bother finding it out. It can be quite hard to find a comprehensive instruction how to actually do testing for this parts of your application. In the following article I will explain workflows for painlessly testing both your `run` and your `config` blocks.
 
 ## Creating a use case
-To better illustrate how to test `config` and `run` blocks in AngularJS we first create an actual example module which we want to test. The module will contain a `config` block which just sets the `html5mode` via `$locationProvider` [^ angularjs locationprovider documentation]. The `run` block will contain a simple function call of a service, specific calling a `start` function of an arbitrary logging service. The content of this service does not matter, its only purpose is to provide an exemplary use case to test. 
+To better illustrate how to test `config` and `run` blocks in AngularJS we first create an actual example module which we want to test. The module will contain a `config` block which just sets the `html5mode` via `$locationProvider` [^angularjs locationprovider documentation]. The `run` block will contain a simple function call of a service, specific calling a `start` function of an arbitrary logging service. The content of this service does not matter, its only purpose is to provide an exemplary use case to test. 
 
 ```js
 angular.module('example', [])
@@ -106,14 +106,14 @@ In the test itself we can use this variable to check the spy we defined. Using t
 ## Conclusion
 Testing `config` and `run` blocks in AngularJS actually is not that hard once you figured out the ways to do so.  Using the workflows described you should be able to test every content of your applications initiation logic leaving no excuses to skip them when writing testing.
 
-You can view the full source code used in this article as a working example [here](http://jsbin.com/mejulakinu/edit?js,output) [^ jsbin example].
+You can view the full source code used in this article as a working example [here](http://jsbin.com/mejulakinu/edit?js,output) [^jsbin example].
 
-[^ karma]: [karma test runner](http://karma-runner.github.io/)
+[^karma]: [karma test runner](http://karma-runner.github.io/)
 
 [^jasmine]: [Jasmine: behavior-driven javascript](http://jasmine.github.io/)
 
-[^ angularjs modules documentation]: [modules documentation](https://docs.angularjs.org/guide/module)
+[^angularjs modules documentation]: [modules documentation](https://docs.angularjs.org/guide/module)
 
-[^ angularjs locationprovider documentation]: [$locationProvider documentation](https://docs.angularjs.org/api/ng/provider/$locationProvider)
+[^angularjs locationprovider documentation]: [$locationProvider documentation](https://docs.angularjs.org/api/ng/provider/$locationProvider)
 
-[^ jsbin example]: [jsbin example](http://jsbin.com/mejulakinu/edit?js,output)
+[^jsbin example]: [jsbin example](http://jsbin.com/mejulakinu/edit?js,output)

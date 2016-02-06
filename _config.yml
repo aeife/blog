@@ -3,11 +3,11 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
-highlighter: pygments
-markdown: redcarpet
-redcarpet:
-  extensions: [footnotes]
-
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+    extensions: [footnotes]
 
 defaults:
   -

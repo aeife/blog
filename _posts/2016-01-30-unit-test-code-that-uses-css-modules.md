@@ -5,7 +5,7 @@ comments: true
 ---
 
 ## How to fix that syntax error
-Did you ever work with CSS and were annoyed of global variables, classes and accidental overwriting of your rules? *CSS Modules* is a great solution to this problems, as it allows importing CSS files into JavaScript. Especially in the *React*[^ react] ecosystem the usage is widely spread. If you have not heard about *CSS Modules* yet, go and check it out here[^ css-modules].
+Did you ever work with CSS and were annoyed of global variables, classes and accidental overwriting of your rules? *CSS Modules* is a great solution to this problems, as it allows importing CSS files into JavaScript. Especially in the *React*[^react] ecosystem the usage is widely spread. If you have not heard about *CSS Modules* yet, go and check it out here[^css-modules].
 
 While using it is really cool, it often leads to a problem a lot of people are confronted with. Running unit tests for code that uses *CSS Modules* most likely will result in a *SyntaxError*, because JavaScript can’t handle the CSS syntax. In this article I demonstrate multiple ways of solving this problem, so unit testing code that imports CSS should be no problem anymore.
 
@@ -21,7 +21,7 @@ element.innerHTML = '<div class="' + styles.className + '">';
 
 Importing and using CSS in JavaScript has a lot of advantages. You don’t need to remember your CSS syntax because you access it via an object and your IDE can suggest existing (and only existing) rules. An even bigger advantage is that all your classes can automatically be prefixed and modified. This is possible, because you don’t reference your CSS via simple strings, but instead via references to the imported object. That is actually a big deal as you can easily realize locally scoped and modular CSS.
 
-The CSS Module spec is currently implemented via *css-loader*[^ css-loader] for Webpack[^ webpack], which is also the most common use case, although it’s not limited to this. Webpack and the *css-loader* handle the CSS imports, local scoping and automatic prefixing of class names.
+The CSS Module spec is currently implemented via *css-loader*[^css-loader] for Webpack[^webpack], which is also the most common use case, although it’s not limited to this. Webpack and the *css-loader* handle the CSS imports, local scoping and automatic prefixing of class names.
 
 ## The Problem
 While this is all very cool, there is one problem a lot of people are having with *CSS Modules* and finding a solution can be surprisingly tricky. The problem is that JavaScript can’t handle CSS syntax. So when you are running unit tests, the test will try to import the CSS file without Webpack resolving the import before. Most likely this will result in an error looking something like this:
@@ -53,7 +53,7 @@ This will handle every import that matches the defined extension. This way you c
 mocha --compilers js:./tests/customCompiler.js
 
 ## Let Webpack handle it
-If you are managing your tests via Webpack (e.g. with *mocha-loader*[^ mocha-loader]), there is a way to fix it in Webpack itself. For this you need the *null-loader*[^ null-loader] and the following definition in your Webpack config:
+If you are managing your tests via Webpack (e.g. with *mocha-loader*[^mocha-loader]), there is a way to fix it in Webpack itself. For this you need the *null-loader*[^null-loader] and the following definition in your Webpack config:
 
 ```js
 {
@@ -65,7 +65,7 @@ If you are managing your tests via Webpack (e.g. with *mocha-loader*[^ mocha-loa
 With this configuration Webpack will load null for every encountered CSS file. To still load the CSS normally for the application it is recommended to specify a separate Webpack config for the tests.
 
 ## Use ignore-styles
-There is an even simpler solution than the two previous ones, which only requires an additional npm module. First of all you need to install the module *ignore-styles*[^ ignore-styles] in your project.
+There is an even simpler solution than the two previous ones, which only requires an additional npm module. First of all you need to install the module *ignore-styles*[^ignore-styles] in your project.
 
 ```js
 npm install --save-dev ignore-styles
@@ -84,10 +84,10 @@ As seen there are various methods to solve the issue of running unit tests for c
 
 Personally I think the solution with *ignore-styles* works best as it’s really easy to use, it does not require manual work and does not necessarily need Webpack to run the tests.
 
-[^ react]: [React](https://facebook.github.io/react/)
-[^ css-modules]: [CSS Modules](https://github.com/css-modules/css-modules)
-[^ css-loader]: [css-loader](https://github.com/webpack/css-loader)
-[^ webpack]: [Webpack](https://webpack.github.io/)
-[^ mocha-loader]: [mocha-loader](https://github.com/webpack/mocha-loader)
-[^ null-loader]: [null-loader](https://github.com/webpack/null-loader)
-[^ ignore-styles]: [ignore-styles](https://github.com/bkonkle/ignore-styles)
+[^react]: [React](https://facebook.github.io/react/)
+[^css-modules]: [CSS Modules](https://github.com/css-modules/css-modules)
+[^css-loader]: [css-loader](https://github.com/webpack/css-loader)
+[^webpack]: [Webpack](https://webpack.github.io/)
+[^mocha-loader]: [mocha-loader](https://github.com/webpack/mocha-loader)
+[^null-loader]: [null-loader](https://github.com/webpack/null-loader)
+[^ignore-styles]: [ignore-styles](https://github.com/bkonkle/ignore-styles)
