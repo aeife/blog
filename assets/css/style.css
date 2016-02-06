@@ -249,3 +249,11 @@ pre.highlight {
     background-color: #f5f5f5;
     border-radius: 0;
 }
+
+.highlight .err {
+    background-color: transparent;
+}
+
+.highlight .o {
+    font-weight: normal;
+}
